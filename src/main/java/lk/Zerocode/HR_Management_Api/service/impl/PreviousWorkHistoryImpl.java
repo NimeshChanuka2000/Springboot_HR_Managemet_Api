@@ -35,7 +35,5 @@ public class PreviousWorkHistoryImpl implements PreviousWorkHistoryService {
 
             previousWorkHistoryRepository.save(previousWorkHistory);
 
-        System.out.println("hr");
-
     }
 }

@@ -66,5 +66,29 @@ public class EmployeeServiceImpl implements EmployeeService {
         return ResponseEntity.ok(basicDetailsDTO);
     }
 
+    @Override
+    public void updateEmployeeDetails(Long id, BasicDetailsDTO basicDetailsDTO)throws EmployeeNotFoundException {
+
+        Optional<Employee> employeeOptional = employeeRepository.findById(id);
+        Employee updateEmployee = employeeOptional.orElseThrow(() ->
+        new EmployeeNotFoundException("Employee not found with ID: " + id));
+
+        updateEmployee.setName(basicDetailsDTO.getName());
+        updateEmployee.setAge(basicDetailsDTO.getAge());
+        updateEmployee.setAddress(basicDetailsDTO.getAddress());
+
+        employeeRepository.save(updateEmployee);
+
+    }
+
+    @Override
+    public void deleteEmployee(Long id) throws EmployeeNotFoundException {
+
+        Employee employee = employeeRepository.findById(id).orElseThrow(
+                () -> new EmployeeNotFoundException("Employee not found with ID: " + id)
+        );
+        employeeRepository.deleteById(id);
+    }
+
 
 }

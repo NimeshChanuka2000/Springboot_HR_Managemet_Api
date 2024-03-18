@@ -10,7 +10,13 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class AppControllerAdvisor {
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ExceptionHandler({EmployeeNotFoundException.class})
+    @ExceptionHandler({
+            EmployeeNotFoundException.class,
+            ContactNotFoundException.class,
+            QualificationNotFoundException.class,
+            CurrentWorkDetailsNotFoundException.class,
+            PreviousWorkHistoryNotFoundException.class
+    })
     public ErrorMessageDTO handelException(Exception exception){
 
         ErrorMessageDTO errorMessage = new ErrorMessageDTO();

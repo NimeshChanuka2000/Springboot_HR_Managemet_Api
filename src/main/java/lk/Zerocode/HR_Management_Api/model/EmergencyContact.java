@@ -16,7 +16,7 @@ public class EmergencyContact {
 
     private String bloodGroup;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "employee_id")
     private Employee employee;
 }

@@ -37,4 +37,14 @@ public class EmployeeDetailsController {
         return  employeeService.getEmployeeDetails(id);
     }
 
+    @PutMapping("/employee/{id}/update")
+    public void updateEmployeeDetails(@PathVariable  Long id,@RequestBody BasicDetailsDTO basicDetailsDTO)throws EmployeeNotFoundException{
+        employeeService.updateEmployeeDetails(id, basicDetailsDTO);
+    }
+
+    @DeleteMapping("/employee/{id}/delete")
+    public void deleteEmployee(@PathVariable Long id)throws EmployeeNotFoundException{
+        employeeService.deleteEmployee(id);
+    }
+
 }

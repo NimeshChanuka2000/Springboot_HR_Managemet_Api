@@ -16,7 +16,7 @@ public class PreviousWorkHistory {
 
     private String previousPosition;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "employee_id")
     private Employee employee;
 }

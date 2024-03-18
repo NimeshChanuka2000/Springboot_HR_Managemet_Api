@@ -22,15 +22,15 @@ public class Employee {
 
     private String address;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee",cascade = CascadeType.ALL)
     private List<CurrentWorkDetails> currentWorkDetails = new ArrayList<>();
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee",cascade = CascadeType.ALL)
     private List<PreviousWorkHistory> previousWorkHistories = new ArrayList<>();
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee",cascade = CascadeType.ALL)
     private List<EducationQualification> educationQualifications = new ArrayList<>();
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee",cascade = CascadeType.ALL)
     private List<EmergencyContact> emergencyContacts = new ArrayList<>();
 }

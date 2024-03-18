@@ -19,7 +19,7 @@ public class EducationQualification {
 
     private String otherQualification;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "employee_id")
     private Employee employee;
 }
