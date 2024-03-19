@@ -34,4 +34,9 @@ public class CurrentWorkDetailsServiceImpl implements CurrentWorkDetailsService 
             currentWorkDetailsRepository.save(currentWorkDetails);
 
     }
+
+    @Override
+    public void updateCurrentWorkDetails(Long eid, Long cid, CurrentWorkDetailsDTO currentWorkDetailsDTO) {
+
+    }
 }

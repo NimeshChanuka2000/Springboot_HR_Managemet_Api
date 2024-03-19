@@ -17,7 +17,7 @@ public class EmergencyContactController {
     public void addEmergencyContact(@PathVariable Long id, @RequestBody EmergencyContactDTO contactDTO)throws EmployeeNotFoundException {
         emergencyContactService.addEmergencyContact(id, contactDTO);
     }
-    @PutMapping("/employee/{eid}/contact/{cid}/update")
+    @PutMapping(value = "/employee/{eid}/contact/{cid}/update",headers = ("version=v1"))
     public void updateEmergencyContact(@PathVariable Long eid,@PathVariable Long cid,@RequestBody EmergencyContactDTO emergencyContactDTO)throws EmployeeNotFoundException, ContactNotFoundException {
         emergencyContactService.updateEmergencyContact(eid,cid, emergencyContactDTO);
     }

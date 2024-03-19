@@ -17,7 +17,7 @@ public class EducationQualificationController {
     public void addQualification(@PathVariable Long id, @RequestBody EducationQualificationDTO qualificationDTO)throws EmployeeNotFoundException {
         qualificationService.addQualification(id, qualificationDTO);
     }
-    @PutMapping("/employee/{eid}/qualification/{qid}/update")
+    @PutMapping(value = "/employee/{eid}/qualification/{qid}/update",headers = ("version=v1"))
     public void updateQualification(@PathVariable Long eid,@PathVariable Long qid,@RequestBody EducationQualificationDTO educationQualificationDTO)throws EmployeeNotFoundException, QualificationNotFoundException {
         qualificationService.updateQualification(eid, qid, educationQualificationDTO);
     }
